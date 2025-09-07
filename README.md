@@ -37,5 +37,4 @@ Je conçois des **solutions data/IA orientées supply chain** : prévision (dema
 - **Impact métier** : chaque repo documente **hypothèses**, **métriques métier** (OTIF, coût, CO₂) et **limites**.
 
 ## 📫 Contact
-- Ouvrir une **Issue** sur un dépôt
 - LinkedIn : https://www.linkedin.com/in/christophe-troel
