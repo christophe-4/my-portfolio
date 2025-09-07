@@ -38,4 +38,4 @@ Je conçois des **solutions data/IA orientées supply chain** : prévision (dema
 
 ## 📫 Contact
 - Ouvrir une **Issue** sur un dépôt
-- LinkedIn : [(ajouter le lien)](https://www.linkedin.com/in/christophe-troel/)
+- LinkedIn : [(https://www.linkedin.com/in/christophe-troel/)]
