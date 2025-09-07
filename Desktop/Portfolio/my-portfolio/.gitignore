@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pyo
+*.pyd
+*.pdb
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# Environnements virtuels
+venv/
+ENV/
+env/
+.venv/
+.Python
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Autres
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.swo
