@@ -1,6 +1,6 @@
 <h1 align="center">Christophe — Consultant Supply Chain & AI/Analytics | Manager Supply Chain</h1>
 <p align="center">
-Prévision & risque (ML) • RAG d’entreprise on-prem • Agents “Control Tower” • KPI OTIF/CO₂ • Focus Lille / Hauts-de-France
+Prévision & risque (ML) • RAG d’entreprise on-prem • Agents “Control Tower” • KPI OTIF/CO₂ 
 </p>
 
 <p align="center">
