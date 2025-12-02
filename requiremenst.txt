@@ -1,0 +1,15 @@
+# Base notebooks et utilitaires
+jupyterlab>=4.2
+ipykernel>=6.29
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12
+matplotlib>=3.8
+seaborn>=0.13
+
+# Projet scikit-learn-basics
+scikit-learn>=1.5
+
+# Projet autogluon-demand-forecast
+autogluon.timeseries==1.1.2 ; python_version < "3.12"
+statsmodels>=0.14

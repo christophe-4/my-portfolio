@@ -1,0 +1,30 @@
+# Environnements et dépendances
+venv/
+.env
+*.env
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Checkpoints et sorties notebooks
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Artefacts de build/packaging
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Éditeurs/OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
