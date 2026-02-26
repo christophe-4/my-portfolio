@@ -1,0 +1,27 @@
+# virtual env
+.venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+build/
+dist/
+.coverage
+.coverage.*
+htmlcov/
+
+# tests / tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# outputs (si tu en génères)
+out/
+data/demo/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
