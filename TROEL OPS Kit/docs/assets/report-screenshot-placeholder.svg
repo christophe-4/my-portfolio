@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" role="img" aria-label="Report screenshot placeholder">
+  <rect width="900" height="420" fill="#f3f4f6"/>
+  <rect x="60" y="30" width="780" height="360" rx="6" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="90" y="75" font-family="Georgia,serif" font-size="26" fill="#111827">TROEL OPS Kit Report</text>
+  <text x="90" y="110" font-family="Georgia,serif" font-size="16" fill="#6b7280">Generated on YYYY-MM-DD</text>
+  <line x1="90" y1="130" x2="810" y2="130" stroke="#e5e7eb"/>
+  <text x="90" y="165" font-family="Georgia,serif" font-size="18" fill="#111827">Summary</text>
+  <text x="90" y="195" font-family="Georgia,serif" font-size="14" fill="#374151">- SKUs with stock: ...</text>
+  <text x="90" y="220" font-family="Georgia,serif" font-size="14" fill="#374151">- Alerts: ...</text>
+  <text x="90" y="330" font-family="Georgia,serif" font-size="13" fill="#9ca3af">Replace with a real report screenshot (Markdown or exported PDF).</text>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "sales": {
+    "date": "Date",
+    "sku": "SKU",
+    "qty": "Quantity"
+  },
+  "stock": {
+    "snapshot_date": "SnapshotDate",
+    "sku": "SKU",
+    "on_hand_qty": "OnHand"
+  },
+  "catalog": {
+    "sku": "SKU",
+    "description": "Desc",
+    "category": "Cat",
+    "supplier": "Supplier",
+    "unit_cost": "Cost"
+  }
+}
