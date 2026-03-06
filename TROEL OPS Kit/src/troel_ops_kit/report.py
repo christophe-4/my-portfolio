@@ -44,15 +44,28 @@ def render_markdown(
 
 
 def markdown_to_pdf(md_path: str | pathlib.Path, pdf_path: str | pathlib.Path) -> pathlib.Path:
-    'Convert report.md to a basic PDF using WeasyPrint (optional extra).'
+    'Render report.md to PDF using Markdown + WeasyPrint (optional extra).'
+    try:
+        from markdown import markdown
+    except ImportError as exc:
+        raise RuntimeError("PDF export requires 'troel-ops-kit[pdf]' to be installed.") from exc
+
     from weasyprint import HTML  # optional dependency
 
     md = pathlib.Path(md_path).read_text(encoding="utf-8")
+    body = markdown(md, extensions=["tables", "fenced_code"])
     html = (
-        "<html><body><pre style='font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "
-        "Liberation Mono, Courier New, monospace; font-size: 11px'>"
-        + md
-        + "</pre></body></html>"
+        "<html><head><style>"
+        "body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;"
+        "margin:32px;color:#111827;line-height:1.5;}"
+        "h1,h2,h3{color:#0f172a;}"
+        "table{border-collapse:collapse;width:100%;margin:16px 0;font-size:12px;}"
+        "th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top;}"
+        "th{background:#e2e8f0;}"
+        "code{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;}"
+        "</style></head><body>"
+        + body
+        + "</body></html>"
     )
     pdf_path = pathlib.Path(pdf_path)
     pdf_path.parent.mkdir(parents=True, exist_ok=True)

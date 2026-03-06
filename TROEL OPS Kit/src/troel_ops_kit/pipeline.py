@@ -81,7 +81,8 @@ def run(
     logger.info("event=validate issues=%s", len(issues_df))
 
     demand = compute_daily_demand(sales)
-    avg = compute_avg_daily_demand(demand, window_days=28)
+    asof = pd.to_datetime(stock["snapshot_date"]).dt.date.max()
+    avg = compute_avg_daily_demand(demand, window_days=28, end_date=asof)
     coverage = compute_coverage_days(stock, avg)
     dormant = compute_dormant_stock(sales, stock, lookback_days=60)
     abc = compute_abc(sales, catalog)

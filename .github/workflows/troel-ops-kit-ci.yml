@@ -1,13 +1,24 @@
-name: CI
+name: TROEL OPS Kit CI
 
 on:
   push:
     branches: ["main"]
+    paths:
+      - ".github/workflows/troel-ops-kit-ci.yml"
+      - "README.md"
+      - "TROEL OPS Kit/**"
   pull_request:
+    paths:
+      - ".github/workflows/troel-ops-kit-ci.yml"
+      - "README.md"
+      - "TROEL OPS Kit/**"
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./TROEL OPS Kit"
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -14,7 +14,9 @@ def compute_daily_demand(sales: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def compute_avg_daily_demand(demand: pd.DataFrame, window_days: int = 28) -> pd.DataFrame:
+def compute_avg_daily_demand(
+    demand: pd.DataFrame, window_days: int = 28, end_date: date | None = None
+) -> pd.DataFrame:
     'For each sku, compute rolling average demand/day.'
     if demand.empty:
         return pd.DataFrame(columns=["date", "sku", "avg_daily_demand"])
@@ -22,10 +24,18 @@ def compute_avg_daily_demand(demand: pd.DataFrame, window_days: int = 28) -> pd.
     df = demand.copy()
     df["date"] = pd.to_datetime(df["date"])
     df = df.sort_values(["sku", "date"])
+    global_end = pd.Timestamp(end_date) if end_date is not None else df["date"].max()
 
     per_sku: list[pd.DataFrame] = []
     for sku, g in df.groupby("sku", sort=False):
-        series = g[["date", "demand_qty"]].set_index("date").asfreq("D", fill_value=0.0)
+        sku_end = max(g["date"].max(), global_end)
+        full_range = pd.date_range(start=g["date"].min(), end=sku_end, freq="D")
+        series = (
+            g[["date", "demand_qty"]]
+            .set_index("date")
+            .reindex(full_range, fill_value=0.0)
+            .rename_axis("date")
+        )
         series["avg_daily_demand"] = series["demand_qty"].rolling(window_days, min_periods=1).mean()
         series = series.reset_index()
         series["date"] = series["date"].dt.date
@@ -44,7 +54,14 @@ def compute_coverage_days(stock: pd.DataFrame, avg_demand: pd.DataFrame, asof: d
         asof = st["snapshot_date"].max()
 
     st_asof = st[st["snapshot_date"] == asof].copy()
-    ad_asof = avg_demand[avg_demand["date"] == asof].copy()
+    ad = avg_demand.copy()
+    ad["date"] = pd.to_datetime(ad["date"]).dt.date
+    ad_asof = (
+        ad[ad["date"] <= asof]
+        .sort_values(["sku", "date"])
+        .groupby("sku", as_index=False)
+        .tail(1)[["sku", "avg_daily_demand"]]
+    )
 
     df = st_asof.merge(ad_asof, how="left", on="sku")
     df["avg_daily_demand"] = df["avg_daily_demand"].fillna(0.0)

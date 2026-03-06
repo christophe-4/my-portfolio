@@ -16,7 +16,7 @@
 ## Tech profile signals
 - Python packaging (`pyproject.toml`, editable install)
 - Testable architecture (`pytest` end-to-end)
-- CI-ready repository (`.github/workflows/ci.yml`)
+- Repo-level GitHub Actions workflow for this project
 - Practical CLI UX (`typer`, `rich`, logging)
 
 ## 60-second run

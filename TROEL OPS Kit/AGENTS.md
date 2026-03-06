@@ -57,7 +57,7 @@ Use Mode 2 unless one of the Mode 3 triggers applies.
 - A feature spec is provided (e.g. `specs/*.md`, `docs/specs/*.md`), OR
 - The task includes clear acceptance criteria and constraints that function as a spec.
 
-### Spec minimalement suffisante (to avoid endless loops)
+### Minimally sufficient spec (to avoid endless loops)
 A spec is considered "minimally sufficient" if it includes:
 - Goal/problem (1–3 lines)
 - Scope: in + out (bullets)
@@ -75,7 +75,7 @@ If a spec is missing/ambiguous:
 
 ---
 
-## Mode 2 (default): Plan → Execute → Review → Test
+## Mode 2 — Detailed operating procedure
 
 ### Phase 0 — Repo scan & plan (required before coding)
 Before making changes:
@@ -87,8 +87,8 @@ Before making changes:
 6. State assumptions and risks (if any).
 
 ### Approval gate (before implementation)
-- Do **not** start implementation until the plan is approved.
-- If I ask to proceed directly, still provide a brief plan first, then implement.
+- Do **not** start implementation until the plan is approved, unless I explicitly ask you to proceed directly.
+- If I ask to proceed directly, treat that as explicit approval: still provide a brief plan first, then implement.
 
 ### Phase execution rules
 - Implement **one phase at a time**.

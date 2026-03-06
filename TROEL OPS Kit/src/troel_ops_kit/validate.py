@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import pandas as pd
 from pydantic import BaseModel, ValidationError
 
-from .contracts import CatalogRow, PurchaseOrderRow, SalesRow, StockRow
+from .contracts import CatalogRow, SalesRow, StockRow
 
 
 @dataclass
@@ -64,15 +64,6 @@ def validate_catalog(df: pd.DataFrame) -> list[ValidationIssue]:
         for i in idx:
             issues.append(ValidationIssue("error", "catalog", int(i), "sku", "sku is missing"))
     issues += _validate_rows(df.fillna(value={"sku": ""}), CatalogRow, "catalog")
-    return issues
-
-
-def validate_po(df: pd.DataFrame) -> list[ValidationIssue]:
-    issues: list[ValidationIssue] = []
-    issues += _validate_rows(df, PurchaseOrderRow, "po")
-    bad = df[df["expected_date"] < df["order_date"]]
-    for i in bad.index.tolist()[:25]:
-        issues.append(ValidationIssue("error", "po", int(i), "expected_date", "expected_date must be >= order_date"))
     return issues
 
 

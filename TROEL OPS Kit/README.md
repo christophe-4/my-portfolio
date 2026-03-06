@@ -14,9 +14,12 @@ Pragmatic Supply Chain toolkit for **ingest -> validate -> KPI -> alerts -> repo
 `TROEL OPS Kit` is a portfolio-grade CLI that demonstrates how to operationalize supply/stock analytics without over-engineering.
 
 - Explainable and auditable business rules
-- Clean Python packaging + CLI + CI
+- Clean Python packaging + CLI + repo-level CI
 - Windows-friendly commands (PowerShell compatible)
 - No client data, only synthetic datasets
+
+This project lives in the `TROEL OPS Kit/` folder of the portfolio repository.
+The GitHub Actions workflow that validates it is defined at the repository root.
 
 ## Quick demo (5 min)
 
@@ -31,7 +34,6 @@ pip install -e ".[dev]"
 
 troel-ops demo generate --out ./data/demo
 troel-ops run --sales ./data/demo/sales.csv --stock ./data/demo/stock.csv --catalog ./data/demo/catalog.csv --out ./out
-troel-ops report --in-dir ./out --format md
 ```
 
 ## Expected outputs
@@ -75,7 +77,7 @@ CSV/XLSX exports
 ## CLI summary
 - `troel-ops demo generate` -> creates synthetic datasets
 - `troel-ops run` -> full pipeline and report generation
-- `troel-ops report --format pdf` -> optional PDF conversion (`pip install -e ".[pdf]"`)
+- `troel-ops report --format pdf` -> rendered PDF export (`pip install -e ".[pdf]"`)
 
 ## Roadmap
 - Add optional DuckDB materialization for intermediate tables
