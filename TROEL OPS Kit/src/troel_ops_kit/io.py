@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Mapping
 import pathlib
+from collections.abc import Mapping
 
 import pandas as pd
 
