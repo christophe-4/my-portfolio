@@ -1,6 +1,5 @@
-# Christophe TROËL
+# Hi, I'm Christophe 👋
 
-**Consultant Supply Chain & Operations | IA appliquee | Automatisation | Data**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Christophe%20TROEL-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/christophe-troel)
 [![Email](https://img.shields.io/badge/Email-christophe.troel%40hotmail.fr-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:christophe.troel@hotmail.fr)
@@ -61,7 +60,7 @@ This repository gathers personal projects at the intersection of supply chain, o
 ## Contact
 
 - LinkedIn: [christophe-troel](https://www.linkedin.com/in/christophe-troel)
-- Email: [christophe.troel@hotmail.fr](mailto:christophe.troel@hotmail.fr)
+
 
 ## Repository Structure
 
